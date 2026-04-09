@@ -1,69 +1,132 @@
-public class MergeSort {
+# Analysis and Design of Algorithms (ADA)
 
-    static int stepCount = 0;
+## Overview
 
-    static void mergeSort(int[] arr, int left, int right) {
-        if (left < right) {
-            int mid = (left + right) / 2;
 
-            mergeSort(arr, left, mid);
-            mergeSort(arr, mid + 1, right);
-            merge(arr, left, mid, right);
-        }
-    }
 
-    static void merge(int[] arr, int left, int mid, int right) {
+    This repository contains implementations of fundamental algorithms studied in the Analysis and Design of Algorithms (ADA) course. The aim is to understand algorithmic techniques, efficiency, and problem-solving strategies using programming.
 
-        int n1 = mid - left + 1;
-        int n2 = right - mid;
+---
 
-        int[] L = new int[n1];
-        int[] R = new int[n2];
+## Objectives
 
-        for (int i = 0; i < n1; i++)
-            L[i] = arr[left + i];
+* Understand basic and advanced algorithmic techniques
+* Analyze time and space complexity
+* Implement standard algorithms in a programming language
+* Compare performance of different algorithms
 
-        for (int j = 0; j < n2; j++)
-            R[j] = arr[mid + 1 + j];
+---
 
-        int i = 0, j = 0, k = left;
+## Topics Covered
 
-        while (i < n1 && j < n2) {
-            stepCount++;  // comparison
-            if (L[i] <= R[j]) {
-                arr[k] = L[i];
-                i++;
-            } else {
-                arr[k] = R[j];
-                j++;
-            }
-            k++;
-        }
+### Searching Algorithms
 
-        while (i < n1) {
-            arr[k++] = L[i++];
-        }
+* Linear Search
+* Binary Search
 
-        while (j < n2) {
-            arr[k++] = R[j++];
-        }
-    }
+### Sorting Algorithms
 
-    static void printArray(int[] arr) {
-        for (int num : arr)
-            System.out.print(num + " ");
-        System.out.println();
-    }
+* Bubble Sort
+* Insertion Sort
+* Selection Sort
+* Merge Sort
 
-    public static void main(String[] args) {
+### Mathematical Algorithms
 
-        int[] arr = {35, 12, 48, 7, 22};
+* Factorial
+* Fibonacci Series
 
-        stepCount = 0;
-        mergeSort(arr, 0, arr.length - 1);
+---
 
-        System.out.println("Sorted Array (Merge Sort):");
-        printArray(arr);
-        System.out.println("Step Count: " + stepCount);
-    }
-}
+## Algorithms Description
+
+### Linear Search
+
+Searches for an element sequentially through a list.
+Time Complexity: O(n)
+
+### Binary Search
+
+Efficient searching technique for sorted arrays using divide and conquer.
+Time Complexity: O(log n)
+
+### Bubble Sort
+
+Repeatedly swaps adjacent elements if they are in wrong order.
+Time Complexity: O(n²)
+
+### Insertion Sort
+
+Builds the sorted array one element at a time.
+Time Complexity: O(n²)
+
+### Selection Sort
+
+Selects the minimum element and places it at the beginning.
+Time Complexity: O(n²)
+
+### Merge Sort
+
+Divide and conquer algorithm that divides, sorts, and merges arrays.
+Time Complexity: O(n log n)
+
+### Factorial
+
+Calculates the product of all positive integers up to a number.
+
+### Fibonacci Series
+
+Generates a sequence where each number is the sum of the previous two.
+
+---
+
+## Technologies Used
+
+* Programming Language: Java (or your language)
+* IDE: VS Code / IntelliJ / Eclipse
+
+---
+
+## Project Structure
+
+```
+ADA-MAIN/
+│── Binary search
+│── Bubble sort
+│── Factorial
+│── Fibonacci series
+│── Insertion sort
+│── Linear search
+│── Merge sort
+│── Selection sort
+│── README.md
+```
+
+---
+
+## How to Run
+
+1. Clone or download the repository
+2. Open in your preferred IDE
+3. Compile and run the desired algorithm file
+
+---
+
+## Learning Outcomes
+
+* Improved problem-solving skills
+* Better understanding of algorithm efficiency
+* Hands-on coding experience
+
+---
+
+## Author
+
+Prateek Malik
+Analysis and design of algorithms/ B.tech CSE(AI - ML)
+
+---
+
+## Academic Use
+
+This project is created for academic purposes as part of the ADA course.
